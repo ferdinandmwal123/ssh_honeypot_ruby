@@ -2,7 +2,7 @@ require 'socket'
 
 server_name = 'localhost' #hostname
 
-
+class MainClass
 #TODO (01) : Not sure this is necessary for this use case
 def find_available_port #find an available port between 1025 and 65534z 
     begin 
@@ -25,3 +25,9 @@ puts "Port to use: #{port_to_use}"
 def socket(server_name, port_to_use)
     server_socket = Socket.new(AF_INET, SOCK_STREAM, 0)
     server_socket.setsockopt(Socket::SOL_SOCKET, Socket::SO_REUSEADDR, true) #allow address reuse
+    gets.chomp
+end
+
+
+
+
